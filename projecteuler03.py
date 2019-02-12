@@ -1,9 +1,6 @@
-# version python 3.4
-# -*- coding: utf-8 -*-
-# décomposition en facteurs premiers
-
+# oui j'ai piqué la formule sur le ouèbe
 def decompose(n):
-    print("%d=1" % (n), end=' ')
+    print("%d = 1" % n, end=' ')
     i = 2
     while n > 1:
         while n % i == 0:
@@ -13,9 +10,4 @@ def decompose(n):
     print("\n")  # saut de ligne
 
 
-def main():
-    decompose(600851475143)
-
-
-if __name__ == '__main__':
-    main()
+print(decompose(600851475143))

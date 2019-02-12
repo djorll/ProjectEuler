@@ -1,9 +1,9 @@
 # une petite fonction pour multiplier un par un les chiffres d'un nombre
 def produit(nbs):
-    prod = 1  # 1 est le zero de la multiplication
+    facteur = 1  # 1 est le zero de la multiplication
     for i in nbs:
-        prod = prod * int(i)
-    return prod
+        facteur *= int(i)
+    return facteur
 
 
 # j'ai essayé de mettre des sauts, mais python met une erreur token dès qu'un ligne démarre par zéro
@@ -12,7 +12,7 @@ gronombre = "7316717653133062491922511967442657474235534919493496983520312774506
 resultat = 0
 # la boucle va balayer le nombre par chaine de 13 chiffres
 for i in range(len(gronombre) - 13):
-    prod = produit(gronombre[i:i + 13])
-    if prod > resultat:
-        resultat = prod
+    facteur = produit(gronombre[i:i + 13])
+    if facteur > resultat:
+        resultat = facteur
 print(resultat)

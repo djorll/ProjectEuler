@@ -1,7 +1,9 @@
-import math
+from time import time
+
+start = time()
 
 
-def nombrePremierJusqua(x):
+def nombrepremierjusqua(x):
     premier = [2]
     i = 3
 
@@ -20,4 +22,5 @@ def nombrePremierJusqua(x):
     return premier
 
 
-print(nombrePremierJusqua(120000)[10000])
+print(nombrepremierjusqua(120000)[10000])
+print("Temps : " + str(time() - start))
