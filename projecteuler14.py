@@ -1,7 +1,9 @@
 from time import time
+
 start = time()
 # initialisation du dictionnaire
 dico_collatz = {1: 0}
+
 
 # calcul recursif de la suite
 def suite_collatz(nb):
@@ -14,10 +16,10 @@ def suite_collatz(nb):
     # tant qu'il n'est pas dans le dico
     # l'execution pas a pas montre que ces valeurs sont 
     # stockee en memoire
-    if nb%2 == 0:
-        longueur = suite_collatz(nb//2)
+    if nb % 2 == 0:
+        longueur = suite_collatz(nb // 2)
     else:
-        longueur = suite_collatz(3*nb + 1)
+        longueur = suite_collatz(3 * nb + 1)
     # un fois un terme trouve dans le dico, 
     # on rebalaye les valeurs stockee recursivement
     # leur longueur = longueur valeur precedente + 1
@@ -25,6 +27,7 @@ def suite_collatz(nb):
     longueur += 1
     dico_collatz[nb] = longueur
     return longueur
+
 
 # variable pour stocker temporairement la longueur
 # et l'ajouter a resultat si c'est la plus longue
