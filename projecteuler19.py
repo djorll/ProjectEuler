@@ -5,14 +5,15 @@
 
 date = [6, 1, 1901]
 
+
 # une fonction pour avoir la date du dimanche suivant
 def get_dimanche_suivant(date):
-    #nombre de jours par mois
+    # nombre de jours par mois
     month_len = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    #Test bissextile
-    if date[2]%4 == 0 and (date[2]%100 != 0 or date[2]%400 == 0):
+    # Test bissextile
+    if date[2] % 4 == 0 and (date[2] % 100 != 0 or date[2] % 400 == 0):
         month_len[1] = 29
-    #On augmente le nombre de jour de 7
+    # On augmente le nombre de jour de 7
     date[0] += 7
     # si le nouveau nombre de jour est superieur à la taille du mois
     # on incremente le mois et on garde le restant du nombre de jours
@@ -25,9 +26,10 @@ def get_dimanche_suivant(date):
         date[2] += 1
     return date
 
+
 resultat = 0
 
-#on teste tous les dimanches et on stoppe dès qu'on arrive à 2001
+# on teste tous les dimanches et on stoppe dès qu'on arrive à 2001
 
 while date[2] != 2001:
     if date[0] == 1:

@@ -13,7 +13,7 @@ def max_path_sum(triangle):
     return triangle[-1][0]
 ​
 # L'utilisation de triples quote permet d'inclure des sauts de ligne
-# du coup je peux appler ces saut avec /n et m'éviter de compter chaque ligne
+# du coup je peux appeler ces saut avec /n et m'éviter de compter chaque ligne
 triangle = """75
 95 64
 17 47 82
