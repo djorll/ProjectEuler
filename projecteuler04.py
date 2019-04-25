@@ -1,14 +1,13 @@
-i = 100
+# A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 
+# 9009 = 91 × 99.
+#
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
 solution = 0
-resultat = 0
-while i < 1000:
-    j = 100
-    while j < 1000:
-        resultat = i * j
-        if str(resultat) == "".join(reversed(str(resultat))):
-            if i * j > solution:
+for i in range(100, 1000):
+    for j in range(i, 1000):
+        if str(i * j) == str(i * j)[::-1]:
+            if (i * j) > solution:
                 solution = i * j
-        j = j + 1
-    i = i + 1
 
 print(solution)
