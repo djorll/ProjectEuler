@@ -1,3 +1,7 @@
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+# 
+# Find the sum of all the primes below two million.
+
 def eratosthene(n):
     """retourne la liste des nombres premiers <= n (crible d'eratosthene)"""
     if n < 2:
