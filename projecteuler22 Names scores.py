@@ -11,7 +11,7 @@
 # ouvrir le fichier à partir de son url
 
 
-# fonction de calcul des lettre d'un mo
+# fonction de calcul des lettre d'un mot
 def total_val_lettres(mot):
     val_lettres = 0
     #Lecture un par un des lettres du mot
