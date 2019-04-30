@@ -12,6 +12,9 @@
 
 # carré taille 3x3, on prend les chiffres de 2 en 2, taille 4x4 de 4 en 4...
 
+from time import time
+start = time()
+
 tailleCarre = 3
 somme = 1
 position = 1
@@ -27,4 +30,4 @@ while tailleCarre < 1002 :
     tailleCarre += 2 # j'avais oublié que la taille du carré évolue de 2 en 2
 
 print(somme)
-
+print("Temps : " + str(time() - start))
