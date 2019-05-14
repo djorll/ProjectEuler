@@ -1,0 +1,35 @@
+# The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8,
+# which is correct, is obtained by cancelling the 9s.
+# 
+# We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+# 
+# There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator.
+# 
+# If the product of these four fractions is given in its lowest common terms, find the value of the denominator.
+
+
+# non trivial => pas de zéro dans le numérateur et le dénominateur
+# pour chaque numérateur de 11 à 99, tester les numérateurs ayant au moins un chiffre en commun
+# puis comparer le rapport numérateur / dénominateur avec et sans ce chiffre commun  
+
+from time import time
+start = time()
+
+resultat = {}
+
+for i in range (1,10) :
+    for j in range (1,10) :
+        for x in range (1,10) :
+            if i / j < 1 and i != j :
+                num1 = ''.join(i,x)
+                num2 = ''.join(x,i)
+                den1 = ''.join(j,x)
+                den2 = ''.join(x,j)
+                if num1 / den1 = i / j :
+                    
+
+
+
+print()
+
+print("Temps : " + str(time() - start))
