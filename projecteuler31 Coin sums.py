@@ -25,7 +25,7 @@ for l2 in range(0, reste+1, 200):
                     reste = 200 - l2 - l1 - p50 - p20 - p10
                     for p5 in range(0, reste+1, 5):
                         reste = 200 - l2 - l1 - p50 - p20 - p10 - p5
-                        for p2 in range(0, reste+1, 2): # le resultat est forcement complété par des pièces de 1
+                        for p2 in range(0, reste+1, 2):  # le resultat est forcement complété par des pièces de 1
                             resultat += 1
 
 print(resultat)

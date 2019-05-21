@@ -17,10 +17,12 @@ start = time()
 
 liste = []
 
-for a in range(2,101) :
-    for b in range(2,101) :
+for a in range(2, 101):
+    for b in range(2, 101):
         liste.append(a**b)
 
-print(a,b,liste[101]) #ligne de vérif, m'a rappelé que in range s'arrête au terme précédent, donc 101 pour aller à 100
+#ligne de vérif, m'a rappelé que in range s'arrête au terme précédent, donc 101 pour aller à 100
+# print(a, b, liste[101])
+
 print(len(list(set(liste))))
 print("Temps : " + str(time() - start))

@@ -19,28 +19,28 @@ somme_resultat = 0
 # l'utilisation d'un dictionnaire pour les factorielle de 0 à 9 est plus rapide 
 # que le calcul via math.factorial
 fact_chiffres = {
-0:1,
-1:1,
-2:2,
-3:6,
-4:24,
-5:120,
-6:720,
-7:5040,
-8:40320,
-9:362880,
+  0: 1,
+  1: 1,
+  2: 2,
+  3: 6,
+  4: 24,
+  5: 120,
+  6: 720,
+  7: 5040,
+  8: 40320,
+  9: 362880,
 }
 
-for i in range (3,1000000) :
+for i in range(3, 1000000):
     chiffre = []
     for j in str(i):
         chiffre.append(j)
     # je ne teste que les cas ou le nombre est bien supérieur à la factorielle de son plus grand chiffre
     if i > fact_chiffres[int(max(chiffre))]: 
         somme_fact = 0
-        for nb in chiffre :
+        for nb in chiffre:
             somme_fact += fact_chiffres[int(nb)]
-        if somme_fact == i :
+        if somme_fact == i:
             somme_resultat += somme_fact
 
 print(somme_resultat)

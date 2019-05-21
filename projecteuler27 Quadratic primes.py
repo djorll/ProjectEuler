@@ -24,40 +24,41 @@
 from time import time
 start = time()
 
-def eratosthene(n):
-    if n < 2:
+
+def eratosthene(p):
+    if p < 2:
         return []
-    n += 1
-    tableau = [False, False] + [True] * (n - 2)
-    tableau[2::2] = [False] * ((n - 2) // 2 + n % 2)
+    p += 1
+    tableau = [False, False] + [True] * (p - 2)
+    tableau[2::2] = [False] * ((p - 2) // 2 + p % 2)
     premiers = [2]
-    racine = int(n ** 0.5)
+    racine = int(p ** 0.5)
     racine = racine + [1, 0][racine % 2]
     for i in range(3, racine + 1, 2):
         if tableau[i]:
             premiers.append(i)
-            tableau[i::i] = [False] * ((n - i) // i + int((n - i) % i > 0))
-    for i in range(racine, n, 2):
+            tableau[i::i] = [False] * ((p - i) // i + int((p - i) % i > 0))
+    for i in range(racine, p, 2):
         if tableau[i]:
             premiers.append(i)
     return premiers
 
 
-def isPrime(n):
+def isprime(m):
     # Corner cases
-    if (n <= 1):
+    if m <= 1:
         return False
-    if (n <= 3):
+    if m <= 3:
         return True
 
     # This is checked so that we can skip
     # middle five numbers in below loop
-    if (n % 2 == 0 or n % 3 == 0):
+    if m % 2 == 0 or m % 3 == 0:
         return False
 
     i = 5
-    while (i * i <= n):
-        if (n % i == 0 or n % (i + 2) == 0):
+    while i * i <= m:
+        if m % i == 0 or m % (i + 2) == 0:
             return False
         i = i + 6
 
@@ -65,7 +66,12 @@ def isPrime(n):
 
 # liste des nombres premiers inférieurs à 1000
 # premiers = eratosthene(1000)
+
+
 longueurMax = 0
+resultat = 0
+resultat_a = 0
+resultat_b = 0
 # b prend successivement la valeur des différents nombres premiers
 for b in eratosthene(1000):
     # a prend successivement la valeur de tous les nombres impairs de -999 à 1000
@@ -73,7 +79,7 @@ for b in eratosthene(1000):
         coef = b
         n = 0
         # Calcul du nombre consécutif de nombres premiers
-        while isPrime(coef):
+        while isprime(coef):
             n += 1
             coef = n**2 + a*n + b
         if n > longueurMax:
@@ -81,5 +87,6 @@ for b in eratosthene(1000):
             resultat = a*b
             resultat_a = a
             resultat_b = b
-print(resultat,resultat_a,resultat_b,longueurMax)
+
+print(resultat, resultat_a, resultat_b, longueurMax)
 print("Temps : " + str(time() - start))

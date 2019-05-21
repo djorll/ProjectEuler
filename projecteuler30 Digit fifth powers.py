@@ -19,11 +19,11 @@ start = time()
 
 resultat = 0
 
-for a in range(100,354295) :
+for a in range(100, 354295):
     sommeChiffre = 0
-    for i in str(a) :
+    for i in str(a):
         sommeChiffre += float(i)**5
-    if a == sommeChiffre :
+    if a == sommeChiffre:
         resultat += a
 
 print(resultat)

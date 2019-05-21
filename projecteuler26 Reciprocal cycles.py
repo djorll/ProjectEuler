@@ -19,6 +19,7 @@
 from time import time
 start = time()
 
+
 def longueur_decimales(denominateur):
     reste = 10
     i = 0
@@ -30,6 +31,7 @@ def longueur_decimales(denominateur):
 
 
 longest = 0
+resultat = 0
 for i in range(2, 1000):
     if i % 2 != 0 and i % 5 != 0:
         length = longueur_decimales(i)

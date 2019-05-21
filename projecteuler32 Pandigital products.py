@@ -19,8 +19,8 @@ produits = []
 permutation = list(itertools.permutations("123456789"))
 
 # transformation en liste de nombres de 9 chiffres
-listePandigital =[]
-for nombre in permutation :
+listePandigital = []
+for nombre in permutation:
     listePandigital.append(''.join(nombre))
 
 
@@ -28,10 +28,10 @@ for nombre in permutation :
 # nb 1 chiffre * nb 4 chiffres == nb 4 chiffres
 # nb 2 chiffres * nb 3 chiffres == nb 4 chiffres
 # des conditions plus restreintes sont possibles mais le code est suffisament rapide ainsi
-for facteur in listePandigital :
-    if int(facteur[0]) * int(facteur[1:5]) == int(facteur[5:9]) :
+for facteur in listePandigital:
+    if int(facteur[0]) * int(facteur[1:5]) == int(facteur[5:9]):
         produits.append(int(facteur[5:9]))
-    if int(facteur[0:2]) * int(facteur[2:5]) == int(facteur[5:9]) :
+    if int(facteur[0:2]) * int(facteur[2:5]) == int(facteur[5:9]):
         produits.append(int(facteur[5:9]))
 
 # list(set()) pour supprimer les doublons

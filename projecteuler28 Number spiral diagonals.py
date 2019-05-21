@@ -20,14 +20,14 @@ somme = 1
 position = 1
 facteur = 2
 
-while tailleCarre < 1002 :
+while tailleCarre < 1002:
     i = 1
-    while i < 5 :
+    while i < 5:
         position += facteur
         somme += position
         i += 1
     facteur += 2
-    tailleCarre += 2 # j'avais oublié que la taille du carré évolue de 2 en 2
+    tailleCarre += 2  # j'avais oublié que la taille du carré évolue de 2 en 2
 
 print(somme)
 print("Temps : " + str(time() - start))
