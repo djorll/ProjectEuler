@@ -6,9 +6,11 @@
 
 from time import time
 start = time()
+
 # fonction pour générer la liste des premiers
 # version commentée de la fonction dans projecteuler10 Summation of primes.py
-
+# noter que toutes les permutations sont forcément contenues dans cet ensemble 
+# vu que 1 000 000 n'est pas premier
 def eratosthene(n):
     if n < 2:
         return []
@@ -27,41 +29,26 @@ def eratosthene(n):
             premiers.append(i)
     return premiers
 
-# fonction pour tester les chiffres générés
-def est_premier(nb):
-    if nb == 1:
-        return False
-    if nb%2 == 0:
-        return False
-    for i in range(3, int(nb**0.5)+1, 2):
-        if nb%i == 0:
-            return False
-    return True
-
-# fonction pour effectuer les permutations circulaires
+# fonction pour effectuer donner les permutations circulaires en integer
 def circulaire(s):
-    circulaire = [s]
+    circulaire = [int(s)]
     i = 0
     while i < len(s)-1:
         s = s[(len(s)-1):len(s)] + s[0:(len(s)-1)]
-        circulaire.append(s)
+        circulaire.append(int(s))
         i += 1
     return (circulaire)
 
-listepremiers = eratosthene(1000000)
 
+ensemblepremiers = set(eratosthene(1000000))
 circularprime = 0
 
-for nb in listepremiers:
-     listecirculaire = circulaire(str(nb))
-     for chiffre in listecirculaire:
-        test = 0
-        if est_premier(int(chiffre)) == True:
-            test += 1
-     if test == len(listecirculaire):
+# test de l'intersection de l'ensemble des circulaires avec l'ensemble des premiers
+for nb in ensemblepremiers:
+    ensemblecirculaire = set(circulaire(str(nb)))
+    if ensemblecirculaire & ensemblepremiers == ensemblecirculaire:
         circularprime += 1
 
 print(circularprime)
 
 print("Temps : " + str(time() - start))
-
