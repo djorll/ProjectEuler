@@ -12,7 +12,7 @@ def estPal(number):
     number = str(number)
     return (number == number[::-1])
 def estPalBin(number):
-    number = f"{number:b}"
+    number = f"{number:b}" #ne fonctionne qu'avec Python 3, a ameliorer
     return (number == number[::-1])
 
 # le sum permet l'économie d'une boucle avec variable
